@@ -5,3 +5,6 @@ src/app/**/*.js.map
 src/app/**/*.js
 src/app/**/*.css
 src/app/**/*.*.ngFactory.js
+
+*.log
+*lock.json
