@@ -7,7 +7,9 @@ import 'rxjs/add/operator/switchMap';
 export class CommentComponent implements OnInit {
     @Input() id: number;
     comment: any;
-    comments: any;
+    comments: any[];
+    showComments: boolean = false;
+    moreComments: boolean = false;
     constructor(private hkservice: HackerService) {}
 
     ngOnInit(){
@@ -15,7 +17,7 @@ export class CommentComponent implements OnInit {
             (response)=>{
                 this.comment = response.json();
                 this.comments = this.comment.kids;
-                // console.log("this.comment",this.comment);
+                this.moreComments = !!this.comments.length;
             }
         )
     }

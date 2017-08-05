@@ -19,6 +19,8 @@ var DashboardComponent = (function () {
         this.hknewsService = hknewsService;
         this.heroes = [];
         this.stories = [];
+        this.ids = [];
+        this.offset = -10;
     }
     DashboardComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -26,17 +28,22 @@ var DashboardComponent = (function () {
             .getHeroes()
             .then(function (heroes) { return _this.heroes = heroes.slice(1, 5); });
         var stories = [];
-        this.hknewsService.getTopStories().switchMap(function (response) {
-            var ids = response.json();
-            ids.forEach(function (id, index) {
-                return _this.hknewsService.getItemData(id).subscribe(function (data) {
-                    var story = data.json();
-                    story.index = index;
-                    _this.stories[index] = story;
-                });
+        this.hknewsService.getTopStories().subscribe(function (response) {
+            _this.ids = response.json();
+            _this.loadStories();
+        });
+    };
+    DashboardComponent.prototype.loadStories = function () {
+        var _this = this;
+        this.offset += 10;
+        this.ids.slice(this.offset, this.offset + 10).forEach(function (id, index) {
+            return _this.hknewsService.getItemData(id).subscribe(function (data) {
+                var story = data.json();
+                story.index = index + _this.offset;
+                console.log(story);
+                _this.stories[index + _this.offset] = story;
             });
-            return stories;
-        }).subscribe(function (_) { });
+        });
     };
     return DashboardComponent;
 }());

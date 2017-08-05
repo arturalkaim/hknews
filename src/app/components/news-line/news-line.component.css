@@ -28,6 +28,7 @@ a, a:visited, a:hover, a:active {
     font-weight: 200;
     border: 1px solid #FC7021;
     display: flex;
+    flex-direction: column;
     min-height: 70px;
 }
 
@@ -58,4 +59,15 @@ a, a:visited, a:hover, a:active {
 .comment-info:hover {
   text-decoration: underline;
   cursor: pointer;
+}
+
+.close-comments:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.close-comments {
+  font-size: 10pt;
+  justify-content: center;
+  display: flex;
 }

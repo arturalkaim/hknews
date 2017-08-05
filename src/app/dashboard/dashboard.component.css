@@ -48,6 +48,22 @@ h4 {
   margin: 10px;
 }
 
+.load-more{
+      width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.load-more:hover {
+  background-color: #EEE;
+  cursor: pointer;
+  color: #607d8b;
+}
+
+h3{
+  color: #FC7021;
+}
+
 @media (max-width: 600px) {
   .module {
     font-size: 10px;

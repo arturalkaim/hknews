@@ -1,4 +1,7 @@
-<div class="comment-line"> 
+<div *ngIf="!comment.deleted" class="comment-line"> 
     <div class="comment-text" [innerHTML]="comment.text"></div>
-    <comment *ngFor="let id of comments" [id]="id"></comment>
+    <div class="comment-info" *ngIf="moreComments" (click)="showComments = !showComments">></div>
+    <div *ngIf="showComments">
+        <comment *ngFor="let id of comments" [id]="id"></comment>
+    </div>
 </div>

@@ -16,13 +16,15 @@ require("rxjs/add/operator/switchMap");
 var CommentComponent = (function () {
     function CommentComponent(hkservice) {
         this.hkservice = hkservice;
+        this.showComments = false;
+        this.moreComments = false;
     }
     CommentComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.hkservice.getItemData(this.id).subscribe(function (response) {
             _this.comment = response.json();
             _this.comments = _this.comment.kids;
-            // console.log("this.comment",this.comment);
+            _this.moreComments = !!_this.comments.length;
         });
     };
     return CommentComponent;

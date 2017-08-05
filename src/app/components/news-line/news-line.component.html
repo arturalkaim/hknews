@@ -11,7 +11,7 @@
     <div class="info">{{story.score}} points | <span class="comment-info" (click)="showComments = !showComments"> {{story.descendants}} comments</span> | @{{story.by}}</div>
   </div>
   <div *ngIf="showComments">
-    <div  class="comment-info" (click)="showComments = !showComments">></div>
+    <div  class="close-comments" (click)="showComments = !showComments">Close comments</div>
     <comment *ngFor="let id of comments" [id]="id"></comment>
   </div>
 </div>
