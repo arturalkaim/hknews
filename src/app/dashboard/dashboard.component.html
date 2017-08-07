@@ -1,6 +1,9 @@
+<a href="http://localhost:3000/logout">
+  <div class="logout-btn">Logout</div>
+</a>
 <h3>Top Stories</h3>
 <div class="grid grid-pad">
-  <news-line  class="news-line" *ngFor="let story of stories" [story]="story">
+  <news-line class="news-line" *ngFor="let story of stories" [story]="story">
   </news-line>
   <span class="load-more" (click)="loadStories()">Load More Missions</span>
 </div>

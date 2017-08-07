@@ -49,59 +49,27 @@ h4 {
 
 .grid-pad {
   padding: 10px 0;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+  height: -webkit-fill-available;
 }
 
 .grid-pad > [class*='col-']:last-of-type {
   padding-right: 20px;
 }
 
-.news-line {
-  margin: 10px;
-}
-
-.load-more {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.load-more:hover {
-  background-color: #EEE;
-  cursor: pointer;
-  color: #607d8b;
-}
-
-h3 {
-  color: #FC7021;
-}
-
-@media (max-width: 600px) {
-  .module {
-    font-size: 10px;
-    max-height: 75px;
-  }
-}
-
-@media (max-width: 1024px) {
-  .grid {
-    margin: 0;
-  }
-  .module {
-    min-width: 60px;
-  }
-}
-
-.logout-btn {
+.login-btn {
   color: #FC7021;
   background-color: transparent;
   padding: 10px;
-  margin: 10px;
   border: 1px solid #FC7021;
   width: fit-content;
   border-radius: 2px;
 }
 
-.logout-btn:hover {
+.login-btn:hover {
   background-color: antiquewhite;
   cursor: pointer;
   color: #607d8b;
